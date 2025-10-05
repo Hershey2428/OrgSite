@@ -27,7 +27,7 @@ h1{
 #week{
     background: var(--card);
     border: 1px solid var(--grid);
-    border-radius: 12px;
+    border-radius: 8px;
     overflow-x: auto;
 }
 .hours{
@@ -38,26 +38,38 @@ h1{
 }
 .each-hour {
   display: grid;
-  grid-template-columns: 60px repeat(7, 1fr); /* 1 label + 7 days */
-  min-height: 40px;
+  grid-template-columns: 60px repeat(7, 1fr);
+  min-height: 24px;
   border-top: 1px solid var(--grid);
   background: #fff;
   position: relative;
 }
-
 .each-hour::before {
   content: attr(data-hour) ":00";
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 12px;
+  font-size: 11px;
   color: var(--muted);
   border-right: 1px solid var(--grid);
   background: #fafafa;
 }
+.each-hour::after {
+  content: "";
+  position: absolute;
+  top: 0; bottom: 0; left: 60px; right: 0;
+  background-image: repeating-linear-gradient(
+    to right,
+    transparent,
+    transparent calc(100% / 7 - 1px),
+    var(--grid) calc(100% / 7),
+    var(--grid) calc(100% / 7 + 1px)
+  );
+  pointer-events: none;
+}
 .days {
   display: grid;
-  grid-template-columns: 60px repeat(7, 1fr); /* Hour + 7 days */
+  grid-template-columns: 60px repeat(7, 1fr);
   background: var(--primary);
   color: var(--primary-ink);
   font-weight: 600;
@@ -68,12 +80,13 @@ h1{
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10px;
+  font-weight: 12px;
+  padding: 5px;
   border-right: 1px solid rgba(255,255,255,.25);
   opacity: .8;
 }
 .days>div{
-  padding: 10px;
+  padding: 5px;
   border-left: 1px solid rgba(0, 0, 0, 0.25);
 }
 .days div:last-child{
