@@ -124,6 +124,66 @@ h1{
   box-shadow:0 2px 4px rgba(0,0,0,.18);
   transition: transform .2s ease;
 }
+.month-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+  color: var(--primary);
+}
+
+.month-header button {
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.month-header button:hover {
+  background: #1d4ed8;
+}
+
+.month-days-header {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  background: var(--primary);
+  color: white;
+  text-align: center;
+  padding: 5px 0;
+  font-weight: 600;
+}
+
+.month-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-auto-rows: 100px;
+  gap: 1px;
+  background: var(--grid);
+}
+
+.month-cell {
+  background: white;
+  position: relative;
+  padding: 5px;
+  font-size: 14px;
+  border: 1px solid var(--grid);
+}
+
+.month-cell span {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.month-cell.today {
+  background: #dbeafe;
+  border: 2px solid var(--primary);
+}
+
 input:checked + .slider{background:var(--primary);}
 input:checked + .slider:before{transform: translateX(24px);}
 .slider.round{ border-radius:999px; }
