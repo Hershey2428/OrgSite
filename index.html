@@ -91,5 +91,32 @@
   </div>
 
   <script src="OrgSite.js"></script>
+  <script>
+  const heartColors = [
+    "var(--pastel-pink)",
+    "var(--pastel-blue)",
+    "var(--pastel-green)",
+    "var(--pastel-cream)"
+  ];
+
+  function createHeart() {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.textContent = "♥";
+
+    heart.style.color = heartColors[Math.floor(Math.random() * heartColors.length)];
+
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = 14 + Math.random() * 12 + "px";
+
+    heart.style.animationDuration = 4 + Math.random() * 5 + "s";
+    heart.style.transform = `rotate(${Math.random() * 20 - 10}deg)`;
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 12000);
+  }
+  setInterval(createHeart, 1000);
+</script>
 </body>
 </html>
