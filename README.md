@@ -1,2 +1,4 @@
-A cute, **pastel-themed interactive calendar** that helps you organize events in style! 
+A cute, **pastel-themed interactive calendar** that helps you organize events in style, called **Asthetic Organization**! 
 Built with **HTML, CSS, and JavaScript**, it features a smooth gradient background, multiple accessible functions, floating hearts, and pastel-themed buttons. Designed to be both aesthetic and functional — perfect for planning while keeping things soft and calming.
+I originally made it to be able to keep track of all my events and plan cutely and aesthetically. Something like Google Calendar is a little boring, so hopefully, this will be a fun way to organize. It's also easy to customize; you can change the colors and easily add pictures by forking and editing the code.
+I struggled with making sure I didn't break my code when I added new features, which is why this project took way longer than expected, and I wasn't able to fully finish my plans for it. I hope to add persistent memory and motivational quotes that keep the users engaged.
